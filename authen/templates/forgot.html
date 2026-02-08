@@ -1,0 +1,23 @@
+{% extends 'main.html'%}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Forgot Password</h2>
+<center>
+    {% if error %}
+    <h2>Username doesnot exist</h2>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Username:</label>
+        <input type="text" name="uname" id="">
+
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+</center>
+{% endblock %}

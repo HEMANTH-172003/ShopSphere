@@ -1,0 +1,119 @@
+/* =========================
+   Navbar Container
+========================= */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   Logo
+========================= */
+nav .logo h1 {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   Links Container
+========================= */
+nav .links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   Nav Links
+========================= */
+nav .links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav .links a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   Forms in Navbar
+========================= */
+nav form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav input[type="text"] {
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 12px;
+    outline: none;
+    width: 150px;
+}
+
+nav button,
+nav input[type="submit"] {
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #667eea;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav button:hover,
+nav input[type="submit"]:hover {
+    background: #e2e6ff;
+}
+
+/* =========================
+   Cart Badge Feel
+========================= */
+nav .links a:last-child {
+    background: #ffdd57;
+    color: #333;
+}
+
+nav .links a:last-child:hover {
+    background: #f4c400;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav .links {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    nav input[type="text"] {
+        width: 120px;
+    }
+}

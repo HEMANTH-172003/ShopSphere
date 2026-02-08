@@ -1,0 +1,60 @@
+<nav>
+    <div class="logo">
+        <h1>ShopSphere</h1>
+    </div>
+    <div class="links">
+        {% if request.user.is_authenticated %}
+            {% if profile_nav %}
+            <a href="{% url 'home' %}">HOME</a>
+            <a href="{% url 'profile' %}">PROFILE</a>
+            <a href="">SUPPORT</a>
+            <a href="">KNOW US</a>
+            <a href="{% url 'logout_' %}">LOGOUT</a>
+            <a href="{% url 'cart' %}">CART({{cartproductscount}})</a>
+        
+        {% else %}
+            <form action="">
+                <input type="text" name="q" id="" placeholder="Search here">
+                <button type="submit">Search</button>
+            </form>
+            <form action="">
+                <input type="submit" name="trending" value="Trending">
+            </form>
+            <form action="">
+                <input type="submit" name="offer" value="Offer">
+            </form>
+            <a href="{% url 'home' %}">HOME</a>
+            <a href="{% url 'profile' %}">PROFILE</a>
+            <a href="">SUPPORT</a>
+            <a href="">KNOW US</a>
+            <a href="{% url 'logout_' %}">LOGOUT</a>
+            <a href="{% url 'cart' %}">CART({{cartproductscount}})</a>
+            {% endif %}
+        {% else %}
+            {% if login_nav %}
+                <a href="{% url 'home' %}">HOME</a>
+                <a href="{% url 'login_' %}">LOGIN</a>
+                <a href="{% url 'register' %}">REGISTER</a>
+                <a href="">SUPPORT</a>
+                <a href="">KNOW US</a>
+            {% else %}
+                <form action="">
+                    <input type="text" name="q" id="" placeholder="Search here">
+                    <button type="submit">Search</button>
+                </form>
+                <form action="">
+                    <input type="submit" name="trending" value="Trending">
+                </form>
+                <form action="">
+                    <input type="submit" name="offer" value="Offer">
+                </form>
+                <a href="{% url 'home' %}">HOME</a>
+                <a href="{% url 'login_' %}">LOGIN</a>
+                <a href="{% url 'register' %}">REGISTER</a>
+                <a href="">SUPPORT</a>
+                <a href="">KNOW US</a>
+        {% endif %}
+    {% endif %}
+
+    </div>
+</nav>

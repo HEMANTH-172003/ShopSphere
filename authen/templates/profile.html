@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<center>
+    <h2>Profile page</h2>
+    User: {{request.user}} <br>
+    First Name : {{request.user.first_name}} <br>
+    Last Name : {{request.user.last_name}} <br>
+    email : {{request.user.email}} <br>
+    username : {{request.user.username}} <br>
+    <a href="{% url 'reset' %}">Reset Password </a> 
+    <a href="{% url 'update' %}">Update profile</a>
+    <a href="{% url 'logout_' %}">Logout</a>
+</center>
+{% endblock %}
+
+
+
+
+
+

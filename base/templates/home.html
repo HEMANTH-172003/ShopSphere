@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="top-area" align="center">
+
+    <!-- category -->
+    {% for i in category %}
+    <form method="GET">
+        <input type="submit" name="cat" value="{{i}}">
+    </form>
+    {% endfor %}
+
+    <br>
+    <a href="{% url 'home' %}" class="all-products-btn">All Products</a>
+    <br>
+
+    {% if nomatch %}
+        <h2>No Match Found</h2>
+    {% endif %}
+
+    {% if offer %}
+        <h2>Flat 50%</h2>
+    {% endif %}
+
+    {% if trend %}
+        <h2>Trending..!</h2>
+    {% endif %}
+
+</div>
+
+
+<div class="product-container">
+
+    {% for i in all_products %}
+    <div class="product-card">
+        <img src="{{i.pimage.url}}" alt="">
+        <p><b>{{i.pname}}</b></p>
+        <p>{{i.pdesc}}</p>
+        <p>₹ {{i.price}}</p>
+        <a href="{% url 'addtocart' i.id %}">Add To Cart</a>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

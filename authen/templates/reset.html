@@ -1,0 +1,31 @@
+{% extends 'main.html'%}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <h2>Rest Password Page</h2>
+    {% if error %}
+    <h2>The old password is incorret</h2>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% if new_pasw %}
+            <label for="">NewPassword</label>
+            <input type="password" name="new_pasw" id=""> <br>
+        {% else %}
+            <label for="">OldPassword</label>
+            <input type="password" name="old_pasw" id=""> <br>
+        {% endif %}
+        
+        <button type="submit">submit</button>
+    </form>
+</center>
+{% endblock %}
+
+

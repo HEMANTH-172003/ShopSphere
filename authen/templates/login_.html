@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>LoginPage</h2>
+
+<center>
+    {% if error %}
+        <h3>The entered username or password is wrong!</h3>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" name="uname"><br>
+
+        <label>Password:</label>
+        <input type="password" name="pasw"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="{% url 'register' %}">SignUp</a>
+    <a href="{% url 'forgot' %}">Forgot Password</a>
+</center>
+{% endblock %}
+
+

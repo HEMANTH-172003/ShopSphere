@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'auth_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<center>
+    <h2>Update Page</h2>
+</center>
+<center>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">First Name:</label>
+        <input type="text" name="fname" id="">  <br>
+
+        <label for="">Last Name:</label>
+        <input type="text" name="lname" id="">  <br>
+
+        <label for="">Email:</label>
+        <input type="text" name="email" id="">  <br>
+
+        <label for="">Username:</label>
+        <input type="text" name="uname" id="">  <br>
+
+        <label for="">Password:</label>
+        <input type="text" name="pasw" id="">  <br>
+
+        <!-- <label for="">First Name:</label>
+        <input type="text" name="fname" id="">  <br> -->
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
